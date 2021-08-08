@@ -1,0 +1,16 @@
+import { Router } from "express";
+import { createCategoryController } from "../modules/cars/useCases/createCategory";
+import { listCategoriesControler } from "../modules/cars/useCases/listCategory";
+
+//Não é responsabilidade da rota conhecer o modelo do dominio
+const categoriesRoutes = Router();
+
+categoriesRoutes.post("/", (request, response) => {
+  return createCategoryController.handle(request, response);
+});
+
+categoriesRoutes.get("/", (request, response) => {
+  return listCategoriesControler.handle(request, response);
+});
+
+export { categoriesRoutes };

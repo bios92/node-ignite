@@ -1,13 +1,9 @@
 import express from "express";
-import { Request, Response } from "express";
-
+import { router } from "./routes";
 const app = express();
+
 app.use(express.json());
 
-app.get("/course", (request: Request, response: Response) => {
-  const { message } = request.body;
-
-  return response.json({ message });
-});
+app.use(router);
 
 app.listen(3333);
