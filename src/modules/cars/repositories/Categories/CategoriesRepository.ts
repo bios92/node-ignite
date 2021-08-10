@@ -2,7 +2,7 @@ import { Category } from "../../model/Category";
 import { ICategoriesRepository } from "./ICategoriesRepository";
 
 //DTO -> Data Transfer Object
-interface ICreateCateforyDTO {
+interface ICreateCategoryDTO {
   name: string;
   description: string;
 }
@@ -26,7 +26,7 @@ class CategoriesRepository implements ICategoriesRepository {
     return CategoriesRepository.INSTANCE;
   }
 
-  create({ name, description }: ICreateCateforyDTO) {
+  create({ name, description }: ICreateCategoryDTO) {
     const category = new Category();
 
     //Função que serve pra atribuir os dados em um objeto

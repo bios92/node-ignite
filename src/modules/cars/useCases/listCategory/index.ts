@@ -6,8 +6,8 @@ const categoriesRepository = CategoriesRepository.getInstance();
 
 const listCategoriesUseCase = new ListCategoriesUseCase(categoriesRepository);
 
-const listCategoriesControler = new ListCategoriesController(
+const listCategoriesController = new ListCategoriesController(
   listCategoriesUseCase
 );
 
-export { listCategoriesControler };
+export { listCategoriesController };
